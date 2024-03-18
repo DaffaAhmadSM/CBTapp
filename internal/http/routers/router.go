@@ -1,13 +1,15 @@
 package routers
 
 import (
+	"github.com/labstack/echo/v4"
 	"gorm.io/gorm"
-	"net/http"
 )
 
-func RouterInit(db *gorm.DB) *http.ServeMux {
-	mux := http.NewServeMux()
-	api(mux, db)
-	return mux
+func RouterInit(db *gorm.DB) *echo.Echo {
+	mux := echo.New()
 
+	web(mux, db)
+	api(mux, db)
+
+	return mux
 }

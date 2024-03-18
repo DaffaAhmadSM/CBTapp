@@ -21,6 +21,7 @@
 
 .idea
 tmp
+node_modules
 
 # Go workspace file
 go.work

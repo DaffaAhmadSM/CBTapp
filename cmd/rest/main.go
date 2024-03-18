@@ -2,8 +2,10 @@ package main
 
 import (
 	"github.com/DaffaAhmadSM/CBTapp/internal/http/database"
+	"github.com/DaffaAhmadSM/CBTapp/internal/http/helpers"
 	"github.com/DaffaAhmadSM/CBTapp/internal/http/routers"
 	"github.com/joho/godotenv"
+	"log"
 	"net/http"
 )
 
@@ -24,14 +26,14 @@ func main() {
 		}
 	}()
 	// INIT SERVER
-	mux := routers.RouterInit(db)
+	e := helpers.EchoSetup(routers.RouterInit(db))
+
+	e.Static("/assets", "./web/static")
 	serverInit := http.Server{
 		Addr:    ":8080",
-		Handler: mux,
+		Handler: e,
 	}
-	err = serverInit.ListenAndServe()
+	log.Println("Server running on http://127.0.0.1:8080")
+	log.Fatal(serverInit.ListenAndServe())
 
-	if err != nil {
-		panic(err)
-	}
 }

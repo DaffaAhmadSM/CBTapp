@@ -33,7 +33,6 @@ func PostgresInit() *gorm.DB {
 	})
 
 	log.Println("Database connection established.")
-	log.Println("Server running on http://127.0.0.1:8080")
 	//defer func() {
 	//	connect, _ := DB.DB()
 	//	err := connect.Close()

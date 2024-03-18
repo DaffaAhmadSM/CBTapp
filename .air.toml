@@ -27,7 +27,6 @@ delay = 1000 # ms
 stop_on_error = true
 # This log file places in your tmp_dir.
 log = "air_errors.log"
-
 [log]
 # Show log time
 time = true
