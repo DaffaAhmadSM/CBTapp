@@ -18,7 +18,7 @@ func PostgresInit() *gorm.DB {
 		log.New(os.Stdout, "\r\n", log.LstdFlags), // io writer
 		logger.Config{
 			SlowThreshold:             0,
-			LogLevel:                  logger.Warn,
+			LogLevel:                  logger.Info,
 			IgnoreRecordNotFoundError: true,
 		},
 	)

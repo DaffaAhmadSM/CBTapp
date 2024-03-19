@@ -5,6 +5,6 @@ import (
 	"net/http"
 )
 
-func (c *MainController) SiswaHomeView(ctx echo.Context) error {
+func (ctr *MainController) SiswaHomeView(ctx echo.Context) error {
 	return ctx.Render(http.StatusOK, "home_siswa", nil)
 }

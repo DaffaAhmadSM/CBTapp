@@ -8,6 +8,7 @@ type User struct {
 	ID        uint       `json:"id" gorm:"primaryKey; autoIncrement:true; not null; unique"`
 	Name      string     `json:"name"`
 	Email     *string    `json:"email"`
+	Password  string     `json:"password"`
 	Image     *string    `json:"image"`
 	CreatedAt *time.Time `json:"created_at"`
 	UpdatedAt *time.Time `json:"updated_at"`

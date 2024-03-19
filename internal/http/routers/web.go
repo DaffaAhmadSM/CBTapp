@@ -4,11 +4,9 @@ import (
 	"github.com/DaffaAhmadSM/CBTapp/internal/http/controllers"
 	"github.com/DaffaAhmadSM/CBTapp/internal/http/helpers"
 	"github.com/labstack/echo/v4"
-	"gorm.io/gorm"
 )
 
-func web(app *echo.Echo, db *gorm.DB) {
-	ctr := controllers.MainController{Database: db}
+func web(app *echo.Echo, ctr *controllers.MainController) {
 	app.GET("/", ctr.LoginView)
 	auth := app.Group("/home")
 	auth.Use(helpers.WebIssueToken)

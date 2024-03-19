@@ -7,5 +7,5 @@ import (
 // Template Parse HTML templates
 
 type MainController struct {
-	Database *gorm.DB
+	Db *gorm.DB
 }
